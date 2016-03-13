@@ -20,7 +20,7 @@ public class EmployeeController {
 		if (id.equals("10000")) {
 			return new ResponseEntity<Employee>(new Employee("10000", "Ravi Kumar"), HttpStatus.OK);
 		} else if (id.equals("20000")) {
-			String message = "20000 exist in system. But while fetching record from database. datbase connection went down. Something wrong happened there.";
+			String message = "20000 exist in system. But while fetching record from database. Database connection went down. Something wrong happened there.";
 			System.out.println(message);
 			throw new EmployeeRunTimeException(message);
 		} else if (id.equals("0")) {
@@ -28,7 +28,7 @@ public class EmployeeController {
 			System.out.println(message);
 			throw new EmployeeBadRequestException(message);
 		} else {
-			String message = "Employee with given id : " + id + "does not exist in system.";
+			String message = "Employee with given id : " + id + " does not exist in system.";
 			throw new EmployeeNotFoundException(message);
 		}
 	}
